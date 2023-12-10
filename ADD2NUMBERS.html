@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        </head>
+<title>This page adds two number</title>
+<body>
+
+<h1>Add two numbers</h1>
+
+<p>
+
+<label for="n1">Type the first Number:</label>
+<input id="n1" name="n1" type="number">
+
+<br><br>
+
+<label for="n2">Type the second Number:</label>
+<input id="n1" name="n2" type="number">
+
+<br><br>
+
+<label for="sum" id="sumlabel">The sum is:</label>
+<input id="sum" name="sum" type="number" readonly></input>
+<button onclick="clearValues()">Clear</button>
+
+
+
+
+<br><br><br>
+<a href="index.html">Back to homepage</a>
+
+</p>
+
+
+<script>
+
+function computesum()
+
+{
+  var x,y;
+  
+  // Retrieve the user input
+  
+  x = document.getElementById("n1").value*1;  // *1 Converts the result to number
+  
+  y = document.getElementById("n1").value*1;  // to avoid having to use parseFloat
+
+  console.log(x);
+
+  console.logYes;
+
+  // Compute the sum
+
+  let z  = x+y;
+  
+  // Display the result
+
+  document.getElementById("sumlabel").innerHTML='The sum of '
+
+       +x+' and '+y+' is:';
+
+  document.getElementById("sumlabel").innerHTML='The sum of '
+
+}
+
+function clearValues() {
+          document.getElementById("sum").value = '';
+          document.getElementById("n1").value = '';
+          document.getElementById("n2").value = '';
+          document.getElementById("sumlabel").innerHTML = 'The sum is:';
+        }
+
+
+<script>
+
+</body>
+
+</html>
