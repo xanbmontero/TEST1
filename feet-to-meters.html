@@ -1,0 +1,118 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f2f2f2;
+            background-color: #1338BE;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        label {
+            color: #333;
+        }
+
+        select, input {
+            width: 10%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #1338BE;
+            color: #f2f2f2;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover, h1:hover {
+            background-color: #4fa3d1;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #result:hover {
+            color: #4fa3d1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Unit Converter</h1>
+
+    <label for="conversionType">Select Conversion Type:</label>
+    <select id="conversionType">
+        <option value="1">Feet to Meters</option>
+        <option value="2">Meters to Feet</option>
+        <option value="3">Fahrenheit to Celsius</option>
+        <option value="4">Celsius to Fahrenheit</option>
+    </select>
+
+    <br><br>
+
+    <label for="inputValue">Enter Value:</label>
+    <input type="text" id="inputValue"><br><br>
+
+    <button onclick="convert()">Convert</button>
+
+    <div id="result"></div>
+
+    <script>
+        function convert() {
+            var conversionType = document.getElementById("conversionType").value;
+            var inputValue = parseFloat(document.getElementById("inputValue").value);
+            var resultElement = document.getElementById("result");
+            var result;
+
+            switch (conversionType) {
+                case "1":
+                    result = inputValue / 3.28084;
+                    resultElement.innerHTML = inputValue + " Feet is " + result.toFixed(2) + " Meters.";
+                    break;
+                case "2":
+                    result = inputValue * 3.28084;
+                    resultElement.innerHTML = inputValue + " Meters is " + result.toFixed(2) + " Feet.";
+                    break;
+                case "3":
+                    result = (inputValue - 32) * 5/9;
+                    resultElement.innerHTML = inputValue + " Fahrenheit is " + result.toFixed(2) + " Celsius.";
+                    break;
+                case "4":
+                    result = (inputValue * 9/5) + 32;
+                    resultElement.innerHTML = inputValue + " Celsius is " + result.toFixed(2) + " Fahrenheit.";
+                    break;
+                default:
+                    resultElement.innerHTML = "Invalid conversion type.";
+            }
+        }
+    </script>
+
+</body>
+</html>
