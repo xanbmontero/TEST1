@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Factorial</title>
+    <!-- Load external CSS styles -->
+    <link rel="stylesheet" href="styles.css">
+<body>
+
+<h1>Print N Natural Numbers using a While Loop</h1>
+<br>
+
+<p>
+<label for="nlimit">Input a value for n:</label>
+<input id="nlimit" type="number"></input>
+<button onclick="ShowNumbers()">Show Numbers</button>
+<button onclick="ClearValues()">ClearValues</button>
+ <br><br>
+    <a href="index.html">Back to homepage</a>
+
+</p>
+<h3 id="ntitle"></h3>
+
+<p id="nnumbers"></p>
+<script>
+function ShowNumbers() {
+
+    var nlimit,i,ntext;
+
+    nlimit = document.getElementById("nlimit").value;
+
+    ntext="";
+    i=1;
+
+    while (i <= nlimit) {
+         ntext += i+" ";
+         i++;
+    }
+
+    console.log(nlimit);
+    console.log(ntext);
+
+    document.getElementById("ntitle").innerHTML=
+      "The first "+nlimit+" natural numbers are:";
+
+    document.getElementById("nnumbers").innerHTML=
+       ntext;
+}
+
+ function ClearValues() {
+            document.getElementById("nnumbers").innerHTML = '';
+            document.getElementById("ntitle").innerHTML = '';
+            document.getElementById("nlimit").value = '';
+        }
+
+</script>
+</body>
+
+</html>
